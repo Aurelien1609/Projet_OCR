@@ -39,7 +39,7 @@ public class MainTSP {
 //		}
 		
 		//switch(stringtoCode(args[0])){
-		switch(stringtoCode("-h1")){
+		switch(stringtoCode("-h2")){
 		case 'h' : // heuristic
 			listRes = tt.testHeuristic(new InsertHeuristicTSP());
 			System.out.println("Heuristic insertion : " + TestTSP.avgVal(listRes)
