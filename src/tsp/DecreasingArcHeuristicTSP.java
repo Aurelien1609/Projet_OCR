@@ -1,8 +1,7 @@
 package tsp;
 import java.util.ArrayList;
 import java.util.List;
-import org.graphstream.graph.*;
-import org.graphstream.graph.implementations.*;
+
 
 
 
