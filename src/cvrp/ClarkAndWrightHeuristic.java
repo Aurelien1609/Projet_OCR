@@ -17,25 +17,24 @@ public class ClarkAndWrightHeuristic implements HeuristicCVRP {
 	public double computeSolution(VRPinstance instance) {
 		// TODO Auto-generated method stub
 		
-//		matrix = instance.getMatrix();
-//		capacity = instance.getCapacity();
-//		demands = instance.getDemands();
-//		nbCustomer = instance.getN();
+		matrix = instance.getMatrix();
+		capacity = instance.getCapacity();
+		demands = instance.getDemands();
+		nbCustomer = instance.getN();
 		
-		matrix = new double[4][4];
-		matrix[1][0] = matrix[0][1] = 2;
-		matrix[2][0] = matrix[0][2] = 3;
-		matrix[3][0] = matrix[0][3] = 2;
-		matrix[1][2] = matrix[2][1] = 1;
-		matrix[2][3] = matrix[3][2] = 2;
-		matrix[1][3] = matrix[3][1] = 3;		
-		
-		capacity = 3; 
-		demands = new int[4];
-		demands[0] = 0;
-		demands[1] = demands[2] = demands[3] = 1;
-		nbCustomer = 4;
-
+//		matrix = new double[4][4];
+//		matrix[1][0] = matrix[0][1] = 2;
+//		matrix[2][0] = matrix[0][2] = 3;
+//		matrix[3][0] = matrix[0][3] = 2;
+//		matrix[1][2] = matrix[2][1] = 1;
+//		matrix[2][3] = matrix[3][2] = 2;
+//		matrix[1][3] = matrix[3][1] = 3;		
+//		
+//		capacity = 3; 
+//		demands = new int[4];
+//		demands[0] = 0;
+//		demands[1] = demands[2] = demands[3] = 1;
+//		nbCustomer = 4;
 		
 		ArrayList<CustomList<Integer>> L = new ArrayList<CustomList<Integer>>();
 		CustomList<Integer> tmp;
