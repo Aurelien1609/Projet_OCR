@@ -51,17 +51,17 @@ public class DecreasingArcHeuristicTSP implements HeuristicTSP {
 		Node currentNode = listNodes.get(0);
 		int inc = 0;
 		solution.add(Integer.parseInt(currentNode.getName()));
-		while (currentNode.getSuccNode() != null && inc < listNodes.size()) {
+		while (currentNode.getSuccNode() != null && inc < listNodes.size() - 1) {
 			currentNode = currentNode.getSuccNode();
 			solution.add(Integer.parseInt(currentNode.getName()));
 			inc += 1;
 		}
 		
-		for (int i = 0; i < solution.size() - 1; i++) {
-			System.out.print(solution.get(i) + "-");
-		}
-		System.out.print(solution.get(solution.size() - 1));
-		System.out.println();		
+//		for (int i = 0; i < solution.size() - 1; i++) {
+//			System.out.print(solution.get(i) + "-");
+//		}
+//		System.out.print(solution.get(solution.size() - 1));
+//		System.out.println();		
 		
 		return value;
 	}

@@ -1,14 +1,38 @@
 package tsp;
 
-class Arc implements Comparable<Arc> {
+public class Arc implements Comparable<Arc> {
 	private Node source;
 	private Node target;
 	private double weight;
+	private int sourceNode;
+	private int targetNode;
 
 	public Arc(Node source, Node target, double weight) {
 		this.source = source;
 		this.target = target;
 		this.weight = weight;
+	}
+	
+	public Arc(int source, int target, double weight) {
+		this.sourceNode = source;
+		this.targetNode = target;
+		this.weight = weight;
+	}
+
+	public int getSourceNode() {
+		return sourceNode;
+	}
+
+	public void setSourceNode(int sourceNode) {
+		this.sourceNode = sourceNode;
+	}
+
+	public int getTargetNode() {
+		return targetNode;
+	}
+
+	public void setTargetNode(int targetNode) {
+		this.targetNode = targetNode;
 	}
 
 	public Node getSource() {

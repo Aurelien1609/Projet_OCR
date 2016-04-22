@@ -129,7 +129,7 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 		Node currentNode = listNodes.get(0);
 		int inc = 0;
 		solution.add(Integer.parseInt(currentNode.getName()));
-		while (currentNode.getSuccNode() != null && inc < listNodes.size()) {
+		while (currentNode.getSuccNode() != null && inc < listNodes.size() - 1) {
 			currentNode = currentNode.getSuccNode();
 			solution.add(Integer.parseInt(currentNode.getName()));
 			inc += 1;

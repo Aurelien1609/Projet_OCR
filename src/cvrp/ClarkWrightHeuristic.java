@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import tsp.DecreasingArcHeuristicTSP;
+import tsp.HeuristicTSP;
 import util.CustomList;
 
 public class ClarkWrightHeuristic implements HeuristicCVRP {
