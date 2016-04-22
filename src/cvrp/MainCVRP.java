@@ -7,7 +7,7 @@ public class MainCVRP {
 		VRPinstance instance = null;
 		try {
 			instance = new VRPinstance("CVRP_Instances_Augerat/A-n32-k5.vrp");
-			HeuristicCVRP h = new ClarkAndWrightHeuristic();
+			HeuristicCVRP h = new ClarkWrightHeuristic();
 			h.computeSolution(instance);
 			
 		} catch (java.io.FileNotFoundException e) {
