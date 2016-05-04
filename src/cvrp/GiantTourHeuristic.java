@@ -90,7 +90,33 @@ public class GiantTourHeuristic implements HeuristicCVRP {
 
 		}
 		
-		ArrayList<Integer> solution = new ArrayList<Integer>();
+		ArrayList<ArrayList<Integer>> solution = new ArrayList<ArrayList<Integer>>();
+		for (int i = 0; i < PCC.size(); i++) {
+			solution.add(new ArrayList<Integer>());
+		}
+		
+		System.out.println("=========PCC=================");
+
+		int ite = 0;
+		for (int i = PCC.size() - 2; i >= 0; i--) {
+			System.out.print(PCC.get(i) + "--");
+			
+			while (solutionTSP.get(ite) != PCC.get(i)) {
+				solution.get(i).add(solutionTSP.get(ite));
+				ite++;				
+			}
+			
+		}
+		
+		System.out.println();
+		System.out.println("=======Solution=======");
+		
+		for (int i = 0; i < solution.size(); i++) {
+			for (int k = 0; k < solution.get(i).size(); k++) {
+				System.out.print(solution.get(i).get(k) + "--");
+			}
+			System.out.println();
+		}
 		
 		
 		return 0;

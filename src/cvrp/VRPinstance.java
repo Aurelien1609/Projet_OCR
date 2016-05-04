@@ -9,10 +9,6 @@ import java.util.Scanner;
  * VRPinstance
  */
 
-/**
- * @author Aurelien
- *
- */
 public class VRPinstance {
 
 
@@ -48,9 +44,11 @@ public class VRPinstance {
 
 		double x[] = new double[size];
 		double y[] = new double[size];
+
+		scan.next();
 		
 		for (int i = 0; i < size; i++) {
-			scan.next();
+			scan.nextInt();
 			x[i] = scan.nextInt();
 			y[i] = scan.nextInt();
 		}
@@ -147,7 +145,7 @@ public class VRPinstance {
 //
 //		VRPinstance instance = null;
 //		try {
-//			instance = new VRPinstance("CVRP_Instances_Augerat/A-n32-k5.vrp");
+//			instance = new VRPinstance("Augerat/A-n32-k5.vrp");
 //		} catch (java.io.FileNotFoundException e) {
 //			System.out.println("File not found");
 //		}
