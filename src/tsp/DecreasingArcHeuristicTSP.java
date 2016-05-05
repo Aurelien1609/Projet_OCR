@@ -24,14 +24,11 @@ public class DecreasingArcHeuristicTSP implements HeuristicTSP {
 		
 		double value = 0.0;
 		createGraph(matrix);
-		listArcs.sort(null);
-		
+		listArcs.sort(null);		
 		for (Arc arc : listArcs) {
 			if (arc.getSource().getSuccNode() == null && arc.getTarget().getPredNode() == null 
 					&& arc.getSource() != arc.getTarget().getSuccNode()) {
-//				String nameSource = arc.getSource().getName();
-//				String nameTarget = arc.getTarget().getName();
-//				String nameArc = nameSource + "-" + nameTarget;
+
 				arc.getSource().setSuccNode(arc.getTarget());
 				arc.getTarget().setPredNode(arc.getSource());
 				
@@ -57,11 +54,16 @@ public class DecreasingArcHeuristicTSP implements HeuristicTSP {
 			inc += 1;
 		}
 		
-//		for (int i = 0; i < solution.size() - 1; i++) {
-//			System.out.print(solution.get(i) + "-");
-//		}
-//		System.out.print(solution.get(solution.size() - 1));
-//		System.out.println();		
+		System.out.println("=========SolutionTSP : Decreasing Arc Heuristic =========");
+		for (int i = 0; i < solution.size() - 1; i++) {
+			System.out.print(solution.get(i) + "-");
+		}
+		
+		System.out.print(solution.get(solution.size() - 1));
+		
+		System.out.println();
+		System.out.println("Valeur du TSP : " + value);
+		System.out.println();
 		
 		return value;
 	}

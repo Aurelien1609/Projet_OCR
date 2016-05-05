@@ -28,8 +28,11 @@ public class MainTSP {
 	public static void main(String args[]) {
 		TestTSP tt = new TestTSP();		
 		//tt.loadFile(args[1]);
-		tt.loadFile("instances/berlin52.tsp");
-		//tt.loadFileList("toy_instances");
+		//tt.loadFile("instances/st70.tsp");
+		//tt.loadFile("toy_instances/toy02.tsp");
+		tt.loadFileList("toy_instances");
+		//tt.loadFileList("instances");
+
 
 		List<Double> listRes; // list of results
 
@@ -38,8 +41,16 @@ public class MainTSP {
 //		    return;
 //		}
 		
+//		listRes = tt.testHeuristic(new InsertHeuristicTSP());
+//		System.out.println("Heuristic insertion : " + TestTSP.avgVal(listRes)
+//				+ " on average");
+//		listRes = tt.testHeuristic(new DecreasingArcHeuristicTSP());
+//		System.out.println("Heuristic decreasing arcs : " + TestTSP.avgVal(listRes)
+//				+ " on average");
+		
+		
 		//switch(stringtoCode(args[0])){
-		switch(stringtoCode("-h2")){
+		switch(stringtoCode("-h1")){
 		case 'h' : // heuristic
 			listRes = tt.testHeuristic(new InsertHeuristicTSP());
 			System.out.println("Heuristic insertion : " + TestTSP.avgVal(listRes)

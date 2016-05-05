@@ -46,24 +46,10 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 		listArcs.add(new Arc(listNodes.get(posI), listNodes.get(posJ), maxValue));
 		listArcs.add(new Arc(listNodes.get(posJ), listNodes.get(posI), maxValue));
 		
-//		System.out.println("noeud sélectionné maximale : " + posI + " et " + posJ + " a distance : " + maxValue);
-
 		listNodes.get(posI).setSuccNode(listNodes.get(posJ));
 		listNodes.get(posJ).setPredNode(listNodes.get(posI));
 		listNodes.get(posI).setPredNode(listNodes.get(posJ));
 		listNodes.get(posJ).setSuccNode(listNodes.get(posI));
-		
-//		for (int i = 0; i < nodesInSubTour.size(); i++) {
-//			System.out.println(nodesInSubTour.get(i));
-//		}
-		
-//		System.out.println("--------------");
-
-//		for (int i = 0; i < nodesOutSubTour.size(); i++) {
-//			System.out.println(nodesOutSubTour.get(i));
-//		}
-		
-//		System.out.println("----- debut algo : ------- ");
 		
 		while (nodesInSubTour.size() < matrix.length) {
 			// compute distance node max with subtour
@@ -78,8 +64,6 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 				}
 			}
 			
-//			System.out.println("noeud sélectionné : " + selectNode + " a une distance de : " + maxValue + " du sous tour");
-			
 			// add arc mininmize cost subtour
 			Arc arcInsert = null;
 			double costInsert = Double.MAX_VALUE;
@@ -87,22 +71,18 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 			
 			for (Arc arc : listArcs) {
 				cost = matrix[arc.getSource().getId()][selectNode] + matrix[selectNode][arc.getTarget().getId()] - arc.getWeight();
-//				System.out.println("cout : " + cost);
 				if (cost < costInsert) {
 					costInsert = cost;
 					arcInsert = arc;
 				}
 				
 			}
-			
-//			System.out.println(" arc à insérer : " + arcInsert + " avec un cout de : " + costInsert);
-					
+								
 			Boolean result = false;
 			for (int i = 0; i < listArcs.size(); i++) {
 				if (listArcs.get(i) == arcInsert) {
 					listArcs.remove(i);
 					result = true;
-//					System.out.println("suppression de l'arc : " + arcInsert);
 					arcInsert.getSource().setSuccNode(null);
 					arcInsert.getTarget().setPredNode(null);
 				}
@@ -117,13 +97,10 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 				arc1.getTarget().setPredNode(arc1.getSource());
 				arc2.getSource().setSuccNode(arc2.getTarget());
 				arc2.getTarget().setPredNode(arc2.getSource());
-//				System.out.println("creation des arcs : " + arc1 + " et " + arc2);
 			}
 			
 			changeListNode(nodesOutSubTour, nodesInSubTour, selectNode);
 			
-//			System.out.println("taille subtour : " + nodesInSubTour.size());
-//			System.out.println(" -------------------------------------------------------------------------------- ");
 		}
 
 		Node currentNode = listNodes.get(0);
@@ -135,17 +112,25 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 			inc += 1;
 		}
 		
+		
+		System.out.println("=========SolutionTSP : Insert Heuristic =========");
 		for (int i = 0; i < solution.size() - 1; i++) {
 			System.out.print(solution.get(i) + "-");
 		}
+		
 		System.out.print(solution.get(solution.size() - 1));
-		System.out.println();
+		
 						
 		double value = 0.0;
 		
 		for (Arc arc : listArcs) {
 			value += arc.getWeight();
 		}
+		
+		System.out.println();
+		System.out.println("Valeur du TSP : " + value);
+		System.out.println();
+
 		
 		return value;
 	}

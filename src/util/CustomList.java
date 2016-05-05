@@ -113,6 +113,7 @@ public class CustomList<T> {
 		@Override
 		public boolean hasNext() {
 			return current.next != null;
+			//return current != null;
 		}
 
 		@Override
