@@ -22,9 +22,12 @@ public class GiantTourHeuristic implements HeuristicCVRP {
 		capacity = instance.getCapacity();
 		demands = instance.getDemands();
 		nbCustomer = instance.getN();
-			
-		HeuristicTSP h = new InsertHeuristicTSP();
-		//HeuristicTSP h = new DecreasingArcHeuristicTSP();
+		
+		System.out.println();
+		System.out.println("=========== Solution CVRP : Giant Tour Heuristic =======");
+
+		//HeuristicTSP h = new InsertHeuristicTSP();
+		HeuristicTSP h = new DecreasingArcHeuristicTSP();
 
 		List<Integer> solutionTSP = new ArrayList<Integer>();		
 		h.computeSolution(matrix, solutionTSP);
@@ -104,8 +107,8 @@ public class GiantTourHeuristic implements HeuristicCVRP {
 		for (int i = 0; i < PCC.size() - 1; i++) {
 			solution.add(new ArrayList<Integer>());
 		}
-		
-		System.out.println("========= Plus court chemin =================");
+				
+		System.out.println("*********** Plus court chemin *************");
 		System.out.print(PCC.get(PCC.size() - 1) + "--");
 
 		int subtour = 0;
@@ -125,7 +128,7 @@ public class GiantTourHeuristic implements HeuristicCVRP {
 		System.out.println();
 		System.out.println();
 
-		System.out.println("=======Solution CVRP : Giant Tour Heuristic =======");
+		
 		
 		System.out.println();
 
