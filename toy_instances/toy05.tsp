@@ -1,7 +1,7 @@
 NAME : toy5
 COMMENT : toy instance with 5 customers
 TYPE : TSP
-DIMENSION: 5
+DIMENSION : 5
 EDGE_WEIGHT_TYPE : EUC_2D
 NODE_COORD_SECTION
   1 0 0

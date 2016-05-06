@@ -1,7 +1,7 @@
 NAME : toy9
 COMMENT : toy instance with 9 customers
 TYPE : TSP
-DIMENSION: 9
+DIMENSION : 9
 EDGE_WEIGHT_TYPE : EUC_2D
 NODE_COORD_SECTION
   1 0 0

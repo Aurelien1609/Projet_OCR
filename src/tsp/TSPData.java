@@ -12,15 +12,16 @@ import java.util.Scanner;
 public class TSPData {
 
 	private double matrix[][] = null;
-	// private String name=null;
+	//private String name = null;
 	private int size;
 
 	public TSPData(FileReader f) {
 		Scanner scan = new Scanner(f);
-		scan.nextLine(); // name
+		System.out.println(scan.nextLine()); // name
 		scan.nextLine(); // comment
 		scan.nextLine(); // type
 		scan.next(); // dimension
+		scan.next();
 		size = scan.nextInt();
 		scan.nextLine(); // passage a la ligne
 		scan.nextLine(); // edge type
@@ -61,6 +62,7 @@ public class TSPData {
 
 	public TSPData(File f) throws java.io.FileNotFoundException {
 		this(new FileReader(f));
+
 	}
 
 	public TSPData(String filename) throws java.io.FileNotFoundException {

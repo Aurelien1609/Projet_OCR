@@ -26,8 +26,8 @@ public class GiantTourHeuristic implements HeuristicCVRP {
 		System.out.println();
 		System.out.println("=========== Solution CVRP : Giant Tour Heuristic =======");
 
-		//HeuristicTSP h = new InsertHeuristicTSP();
-		HeuristicTSP h = new DecreasingArcHeuristicTSP();
+		HeuristicTSP h = new InsertHeuristicTSP();
+		//HeuristicTSP h = new DecreasingArcHeuristicTSP();
 
 		List<Integer> solutionTSP = new ArrayList<Integer>();		
 		h.computeSolution(matrix, solutionTSP);

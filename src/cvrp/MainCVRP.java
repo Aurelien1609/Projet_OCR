@@ -6,8 +6,8 @@ public class MainCVRP {
 
 		VRPinstance instance = null;
 		try {
-			//instance = new VRPinstance("CVRP_Instances_Augerat/P-n16-k8.vrp");
-			instance = new VRPinstance("CVRP_Instances_Augerat/A-n32-k5.vrp");
+			instance = new VRPinstance("CVRP_Instances_Augerat/P-n16-k8.vrp");
+			//instance = new VRPinstance("CVRP_Instances_Augerat/A-n32-k5.vrp");
 			//instance = new VRPinstance("CVRP_Instances_Augerat/A-n80-k10.vrp");
 
 			HeuristicCVRP h = new ClarkWrightHeuristic();
