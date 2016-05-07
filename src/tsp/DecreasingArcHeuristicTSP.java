@@ -25,8 +25,9 @@ public class DecreasingArcHeuristicTSP implements HeuristicTSP {
 		double value = 0.0;
 		createGraph(matrix);
 		listArcs.sort(null);		
-		for (Arc arc : listArcs) {
-			if (arc.getSource().getSuccNode() == null && arc.getTarget().getPredNode() == null 
+		for (Arc arc : listArcs) {			
+			if (arc.getSource().getSuccNode() == null 
+					&& arc.getTarget().getPredNode() == null 
 					&& arc.getSource() != arc.getTarget().getSuccNode()) {
 
 				arc.getSource().setSuccNode(arc.getTarget());

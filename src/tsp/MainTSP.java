@@ -1,4 +1,7 @@
 package tsp;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.List;
 
 public class MainTSP {
@@ -23,9 +26,10 @@ public class MainTSP {
 	 * l  : lower bound
 	 * 
 	 * Parameter timeLimit is only used when the first parameter is e
+	 * @throws FileNotFoundException 
 	 * 
 	 * */
-	public static void main(String args[]) {
+	public static void main(String args[]) throws FileNotFoundException {
 		TestTSP tt = new TestTSP();		
 		//tt.loadFile(args[1]);
 		//tt.loadFileList("instances");
@@ -34,8 +38,11 @@ public class MainTSP {
 		//tt.loadFile("instances/bier127.tsp");
 		//tt.loadFile("instances/brd14051.tsp");
 
+//
+//		PrintStream out = new PrintStream(new FileOutputStream("Result_toy_instances"));
+//		System.setOut(out);
 
-
+		
 		List<Double> listRes; // list of results
 
 //		if(args.length < 2){
