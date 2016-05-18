@@ -1,0 +1,4 @@
+README
+
+mainTSP : il faut décommenter l'heuristique que l'on souhaite utiliser, par défaut = insertHeuristic
+mainCVRP : il faut décommenter l'heuristique que l'on souhaite utiliser, par défaut = clark and wright heuristic

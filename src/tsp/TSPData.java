@@ -12,12 +12,14 @@ import java.util.Scanner;
 public class TSPData {
 
 	private double matrix[][] = null;
-	//private String name = null;
+	private String name = null;
 	private int size;
 
 	public TSPData(FileReader f) {
 		Scanner scan = new Scanner(f);
-		System.out.println(scan.nextLine()); // name
+		name = scan.nextLine(); // name
+		System.out.println(name);
+		//System.out.print(name.substring(7, name.length()) + " & ");
 		scan.nextLine(); // comment
 		scan.nextLine(); // type
 		scan.next(); // dimension

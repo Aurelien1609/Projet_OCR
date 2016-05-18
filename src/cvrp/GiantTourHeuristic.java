@@ -14,10 +14,14 @@ public class GiantTourHeuristic implements HeuristicCVRP {
 	int capacity;
 	int[] demands = null;
 	int nbCustomer;
+	long meanTime = 0;
+	int nbFile = 0;
 	
 	@Override
 	public double computeSolution(VRPinstance instance) {
 		
+		long start = System.currentTimeMillis();
+
 		matrix = instance.getMatrix();
 		capacity = instance.getCapacity();
 		demands = instance.getDemands();
@@ -143,7 +147,11 @@ public class GiantTourHeuristic implements HeuristicCVRP {
 			value += costSubTour(solution.get(i));
 		}
 		
+		long end = System.currentTimeMillis();
+		long ms = (end - start);
+		
 		System.out.println();
+		System.out.println("Temps de résolution : " + ms + " ms");
 		System.out.println("Résultat : " + value);	
 		
 		return value;

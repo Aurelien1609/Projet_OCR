@@ -31,48 +31,18 @@ public class MainTSP {
 	 * */
 	public static void main(String args[]) throws FileNotFoundException {
 		TestTSP tt = new TestTSP();		
-		//tt.loadFile(args[1]);
-		//tt.loadFileList("instances");
-		//tt.loadFile("toy_instances/toy02.tsp");
-		tt.loadFileList("toy_instances");
-		//tt.loadFile("instances/bier127.tsp");
-		//tt.loadFile("instances/brd14051.tsp");
-
-//
-//		PrintStream out = new PrintStream(new FileOutputStream("Result_toy_instances"));
-//		System.setOut(out);
-
+		tt.loadFileList("instances");
 		
 		List<Double> listRes; // list of results
-
-//		if(args.length < 2){
-//		    System.out.println("Argument Error\nSyntax : TestTSP -{h1,h2,e,l} instanceName timeLimit");
-//		    return;
-//		}
 		
-//		listRes = tt.testHeuristic(new InsertHeuristicTSP());
-//		System.out.println("Heuristic insertion : " + TestTSP.avgVal(listRes)
-//				+ " on average");
+		listRes = tt.testHeuristic(new InsertHeuristicTSP());
+		System.out.println("Heuristic insertion : " + TestTSP.avgVal(listRes)
+				+ " on average");
+		
 //		listRes = tt.testHeuristic(new DecreasingArcHeuristicTSP());
 //		System.out.println("Heuristic decreasing arcs : " + TestTSP.avgVal(listRes)
 //				+ " on average");
 		
-		
-		//switch(stringtoCode(args[0])){
-		switch(stringtoCode("-h2")){
-		case 'h' : // heuristic
-			listRes = tt.testHeuristic(new InsertHeuristicTSP());
-			System.out.println("Heuristic insertion : " + TestTSP.avgVal(listRes)
-					+ " on average");
-			break;
-		case 'H' : // heuristic
-			listRes = tt.testHeuristic(new DecreasingArcHeuristicTSP());
-			System.out.println("Heuristic decreasing arcs : " + TestTSP.avgVal(listRes)
-					+ " on average");
-			break;			
-		default :  // error
-			System.out.println("Argument Error\nSyntax : TestTSP -{h1,h2,e,l} instanceName timeLimit");
-		}
 	}
 
 	

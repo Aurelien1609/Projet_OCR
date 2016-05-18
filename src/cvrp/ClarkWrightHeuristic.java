@@ -10,9 +10,13 @@ public class ClarkWrightHeuristic implements HeuristicCVRP {
 	int capacity;
 	int[] demands = null;
 	int nbCustomer;
+	long meanTime = 0;
+	int nbFile = 0;
 	
 	@Override
 	public double computeSolution(VRPinstance instance) {
+
+		long start = System.currentTimeMillis();
 
 		matrix = instance.getMatrix();
 		capacity = instance.getCapacity();
@@ -121,17 +125,16 @@ public class ClarkWrightHeuristic implements HeuristicCVRP {
 			System.out.println();
 		}
 		
-		System.out.println();
-		System.out.println("Résultat : " + value);	
-		
-		
+		long end = System.currentTimeMillis();
+
+		long ms = (end - start);
 
 		
-		
-		
-		
-		
-		return 0;
+		System.out.println();
+		System.out.println("Temps de résolution : " + ms + " ms");
+		System.out.println("Résultat : " + value);	
+	
+		return value;
 	}
 	
 	public double costSubTour(CustomList<Integer> customList) {

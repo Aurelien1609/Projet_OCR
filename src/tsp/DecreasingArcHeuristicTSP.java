@@ -13,19 +13,22 @@ import java.util.List;
  */
 public class DecreasingArcHeuristicTSP implements HeuristicTSP {
 
+	long meanTime = 0;
+	int nbFile = 0;
 	public List<Arc> listArcs = new ArrayList<Arc>();
 	public List<Node> listNodes = new ArrayList<Node>();
 	
 	/** TODO coder cette méthode */
 	public double computeSolution(double[][] matrix, List<Integer> solution) {
 		
+		long start = System.currentTimeMillis();
 		listArcs = new ArrayList<Arc>();
 		listNodes = new ArrayList<Node>();
 		
 		double value = 0.0;
 		createGraph(matrix);
 		listArcs.sort(null);		
-		for (Arc arc : listArcs) {			
+		for (Arc arc : listArcs) {
 			if (arc.getSource().getSuccNode() == null 
 					&& arc.getTarget().getPredNode() == null 
 					&& arc.getSource() != arc.getTarget().getSuccNode()) {
@@ -55,6 +58,8 @@ public class DecreasingArcHeuristicTSP implements HeuristicTSP {
 			inc += 1;
 		}
 		
+		long end = System.currentTimeMillis();
+		long ms = (end - start);
 		System.out.println("=========SolutionTSP : Decreasing Arc Heuristic =========");
 		for (int i = 0; i < solution.size() - 1; i++) {
 			System.out.print(solution.get(i) + "-");
@@ -63,9 +68,11 @@ public class DecreasingArcHeuristicTSP implements HeuristicTSP {
 		System.out.print(solution.get(solution.size() - 1));
 		
 		System.out.println();
+		System.out.println("Temps de résolution : " + ms + " ms");
 		System.out.println("Valeur du TSP : " + value);
 		System.out.println();
-		
+
+	
 		return value;
 	}
 	
@@ -99,7 +106,7 @@ public class DecreasingArcHeuristicTSP implements HeuristicTSP {
 				
 			}	
 		}
-			
+				
 		return cycle;
 	}	
 	

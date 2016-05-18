@@ -1,0 +1,33 @@
+=======Solution CVRP : Clark and Wright Heuristic =======
+
+Nombre de véhicules : 5
+Capacité MAX : 100
+
+[12,1,13,7,16] avec coût de : 112.0
+[14,22,9,8,11,4,28,18,6,26] avec coût de : 258.0
+[21,31,19,17,23,3,2] avec coût de : 217.0
+[27,29,15,10,25,5,20] avec coût de : 195.0
+[30,24] avec coût de : 65.0
+
+Résultat : 847.0
+
+=========== Solution CVRP : Giant Tour Heuristic =======
+=========SolutionTSP : Insert Heuristic =========
+0-14-24-27-20-29-5-25-10-15-22-9-18-8-11-4-28-23-3-2-6-17-19-31-21-13-7-1-12-16-26-30
+Temps de résolution : 5 ms
+Valeur du TSP : 480.0
+
+*********** Plus court chemin *************
+0--27--8--6--7--30--
+
+
+Nombre de véhicules : 5
+Capacité MAX : 100
+
+[14, 24, 27] avec coût de : 64.0
+[20, 29, 5, 25, 10, 15, 22, 9, 18, 8] avec coût de : 290.0
+[11, 4, 28, 23, 3, 2, 6] avec coût de : 231.0
+[17, 19, 31, 21, 13, 7] avec coût de : 160.0
+[1, 12, 16, 26, 30] avec coût de : 85.0
+
+Résultat : 830.0

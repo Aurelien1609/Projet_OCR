@@ -11,10 +11,15 @@ import java.util.List;
  */
 
 public class InsertHeuristicTSP implements HeuristicTSP {
+	
+	long meanTime = 0;
+	int nbFile = 0;
 
 	/** TODO : coder cette méthode */
 	public double computeSolution(double[][] matrix, List<Integer> solution) {
 			
+		long start = System.currentTimeMillis();
+
 		ArrayList<Integer> nodesInSubTour = new ArrayList<Integer>();
 		ArrayList<Integer> nodesOutSubTour = new ArrayList<Integer>();		
 		
@@ -41,6 +46,7 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 			}
 		}
 		
+		// add two first nodes in nodesInSubTour
 		changeListNode(nodesOutSubTour, nodesInSubTour, posI);
 		changeListNode(nodesOutSubTour, nodesInSubTour, posJ);
 		listArcs.add(new Arc(listNodes.get(posI), listNodes.get(posJ), maxValue));
@@ -68,7 +74,7 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 			Arc arcInsert = null;
 			double costInsert = Double.MAX_VALUE;
 			double cost = 0.0;
-			
+
 			for (Arc arc : listArcs) {
 				cost = matrix[arc.getSource().getId()][selectNode] + matrix[selectNode][arc.getTarget().getId()] - arc.getWeight();
 				if (cost < costInsert) {
@@ -127,10 +133,13 @@ public class InsertHeuristicTSP implements HeuristicTSP {
 			value += arc.getWeight();
 		}
 		
+		long end = System.currentTimeMillis();
+		long ms = (end - start);
+		
 		System.out.println();
+		System.out.println("Temps de résolution : " + ms + " ms");
 		System.out.println("Valeur du TSP : " + value);
 		System.out.println();
-
 		
 		return value;
 	}
